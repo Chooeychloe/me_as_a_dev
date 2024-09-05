@@ -6,6 +6,7 @@ import location_icon from "../../assets/location_icon.svg";
 import call_icon from "../../assets/call_icon.svg";
 
 const Contact = () => {
+
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event) => {
@@ -13,7 +14,7 @@ const Contact = () => {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", process.env.REACT_APP_API_KEY);
+    formData.append("access_key", import.meta.env.VITE_API_KEY);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
