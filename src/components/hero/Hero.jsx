@@ -1,9 +1,11 @@
-import React from "react";
+import React,{ useState } from "react";
 import "./Hero.css";
 import profile_img from "../../assets/profile.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import resume from "../../assets/resume.pdf";
 
 const Hero = () => {
+ 
   return (
     <div id="home" className="hero">
       <img src={profile_img} alt="" />
@@ -21,8 +23,15 @@ const Hero = () => {
             Connect with me
           </AnchorLink>
         </div>
-        <div className="hero-resume">My Resume</div>
+        <a
+          href={resume}
+          download="Dhan_Belgica_Resume.pdf"
+          className="hero-resume"
+        >
+       Download CV
+        </a>
       </div>
+      
     </div>
   );
 };
